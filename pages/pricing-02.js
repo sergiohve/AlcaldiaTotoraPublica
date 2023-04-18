@@ -95,12 +95,12 @@ export default function Pricing02Page() {
                 >
                   <Typography variant="subtitle2">{option.title}</Typography>
                   <Tooltip title={option.tootip} placement="right" arrow>
-                    <div>
+                   
                       <Iconify
                         icon={informationIcon}
                         sx={{ color: 'text.secondary', width: 20, height: 20 }}
                       />
-                    </div>
+                  
                   </Tooltip>
                 </Stack>
               ))}

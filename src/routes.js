@@ -1,38 +1,62 @@
 // ----------------------------------------------------------------------
-
+//Routes.transparencia.transparencia
 const Routes = {
-  // Marketing
-  marketing: {
-    landing: '/marketing',
-    services: '/marketing/services',
-    caseStudies: '/marketing/case-studies',
-    caseStudy: (slug) => `/marketing/case-studies/${slug}`,
-    posts: '/marketing/blog',
-    post: (slug) => `/marketing/blog/${slug}`,
-    about: '/marketing/about-us',
-    contact: '/marketing/contact-us',
+  transparencia: {
+    landing: '/transparencia/',
+    rendicion_publica: '/transparencia/rendicion_publica',
+    auditoria: '/transparencia/auditoria',
+    formularios: '/transparencia/formularios',
+
+    prevencion_transparencia: '/transparencia/prevencion_transparencia',
+    lucha_contracorrupcion: '/transparencia/lucha_contracorrupcion',
+    contacto_responsable: '/transparencia/contacto_responsable',
+
+
+  },
+  gestion_municipal: {
+    planificacion_financiera: '/gestion_municipal/planificacion_financiera',
+    reglamentos_manuales: '/gestion_municipal/reglamentos_manuales',
+    recursos_humanos: '/gestion_municipal/recursos_humanos',
+
   },
   // Travel
-  travel: {
-    landing: '/travel',
-    tours: '/travel/tours',
-    tour: (id) => `/travel/tours/${id}`,
-    checkout: '/travel/checkout',
-    checkoutComplete: '/travel/checkout/complete',
-    posts: '/travel/blog',
-    post: (slug) => `/travel/blog/${slug}`,
-    about: '/travel/about-us',
-    contact: '/travel/contact-us',
+  services_tramites: {
+    guia_tramites: '/services_tramites/guia_tramites',
+    servicios: '/services_tramites/servicios',
+
   },
-  // Career
-  career: {
-    landing: '/career',
-    jobs: '/career/jobs',
-    job: (id) => `/career/jobs/${id}`,
-    posts: '/career/blog',
-    post: (slug) => `/career/blog/${slug}`,
-    about: '/career/about-us',
-    contact: '/career/contact-us',
+
+  // institucion
+  institucion: {
+
+    fundacion: "/institucion/fundacion",
+    mision: "/institucion/mision",
+    vision: "/institucion/vision",
+    objetivos_institucionales: "/institucion/objetivos_institucionales",
+    autoridades_organizacion: "/institucion/autoridades_organizacion",
+    organigrama: '/institucion/organigrama',
+    gaceta_municipal: '/institucion/gaceta_municipal',
+
+  },
+  informacion_interes: {
+
+    noticias: "/informacion_interes/noticias",
+    eventos: "/informacion_interes/eventos",
+    informacion_estadistica: "/informacion_interes/informacion_estadistica",
+    banco_trabajo_investigacion: "/informacion_interes/banco_trabajo_investigacion",
+    medios_comunicacion: "/informacion_interes/medios_comunicacion",
+    enlaces: '/informacion_interes/enlaces',
+  },
+  programas_proyectos: {
+
+    actividad_economica: "/programas_proyectos/actividad_economica",
+    obras: "/programas_proyectos/obras",
+    programas: "/programas_proyectos/programas",
+
+  },
+  contacto: {
+    comentarios: "/contacto/comentarios",
+    directorios: "/contacto/directorios"
   },
   // E-Learning
   eLearning: {

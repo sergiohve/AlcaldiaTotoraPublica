@@ -33,14 +33,14 @@ export default function NewsletterMarketing() {
               src="https://zone-assets-api.vercel.app/assets/icons/ic_newsletter.svg"
               sx={{ width: 80, height: 80, color: 'primary.main' }}
             />
-            <div>
+          
               <Typography variant="h4" gutterBottom>
                 Sign Up For Newsletter
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                 Receive 50% discount on first project
               </Typography>
-            </div>
+          
           </Stack>
 
           <FilledInput

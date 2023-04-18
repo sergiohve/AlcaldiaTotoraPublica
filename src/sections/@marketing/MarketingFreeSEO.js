@@ -13,11 +13,9 @@ import { Iconify } from '../../components';
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(10, 0),
+  background: "black",
   ...cssStyles(theme).bgImage({
-    direction: 'right',
-    url: 'https://zone-assets-api.vercel.app/assets/images/marketing/marketing_get_free_seo.jpg',
-    startColor: `${alpha(theme.palette.grey[900], 0)} 0%`,
-    endColor: `${alpha(theme.palette.grey[900], 1)} 50%`,
+    direction: 'right'
   }),
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
@@ -50,8 +48,8 @@ export default function MarketingFreeSEO() {
                 textAlign: { xs: 'center', md: 'left' },
               }}
             >
-              Get Free
-              <br /> SEO Analysis
+             COMPARTE TUS COMENTARIOS
+              <br />
             </Typography>
 
             <Stack
@@ -63,7 +61,7 @@ export default function MarketingFreeSEO() {
             >
               <Iconify icon={emailIcon} sx={{ width: 24, height: 24 }} />
               <Link color="inherit" href="mailto:hello@example.com">
-                hello@example.com
+                alcaldiatotora@gmail.com
               </Link>
             </Stack>
 
@@ -75,18 +73,18 @@ export default function MarketingFreeSEO() {
               sx={{ color: 'common.white' }}
             >
               <Iconify icon={locationIcon} sx={{ width: 24, height: 24 }} />
-              <Typography>508 Bridle Avenue Newnan, GA 30263</Typography>
+              <Typography>Cerca del museo Casa de Ladislao Cabrera Bargas.</Typography>
             </Stack>
           </Grid>
 
           <Grid item xs={12} md={5}>
             <Stack spacing={2.5} alignItems={{ xs: 'center', md: 'flex-start' }}>
-              <InputStyle variant="filled" label="Name" />
-              <InputStyle variant="filled" label="Email" />
-              <InputStyle variant="filled" label="Phone" />
-              <InputStyle variant="filled" label="Website URL" sx={{ pb: 2.5 }} />
+              <InputStyle variant="filled" label="Nombre" />
+              <InputStyle variant="filled" label="Correo" />
+              <InputStyle variant="filled" label="Teléfono" />
+              <InputStyle type="textarea" label="Comentarios" sx={{ pb: 2.5 }} />
               <Button size="large" variant="contained" sx={{ width: 172 }}>
-                Send Request
+                Enviar
               </Button>
             </Stack>
           </Grid>

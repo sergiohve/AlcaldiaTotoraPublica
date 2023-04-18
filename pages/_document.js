@@ -29,7 +29,7 @@ export default class MyDocument extends Document {
             name="keywords"
             content="react,material,kit,application,landing & corporate,template"
           />
-          <meta name="author" content="ZONE UI Kit" />
+          <meta name="author" content="Totora" />
 
           <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />

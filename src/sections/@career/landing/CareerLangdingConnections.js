@@ -122,7 +122,7 @@ export default function CareerLangdingConnections({ countries }) {
                 Vestibulum fringilla pede sit amet augue. Nam adipiscing. Nulla neque dolor,
                 sagittis eget, iaculis quis.
               </Typography>
-              <NextLink href={Routes.career.jobs} passHref>
+              <NextLink href={Routes.institucion.jobs} passHref>
                 <Button
                   size="large"
                   variant="contained"
@@ -158,7 +158,7 @@ export default function CareerLangdingConnections({ countries }) {
                 color: 'common.white',
               }}
             >
-              <JobByCountryItem key={country.id} country={country} />
+              <JobByCountryItem key={country?.id} country={country} />
             </Box>
           ))}
         </Slider>
@@ -182,7 +182,7 @@ JobByCountryItem.propTypes = {
 function JobByCountryItem({ country }) {
   const { location, coverImg, totalJobs } = country;
   return (
-    <NextLink href={Routes.career.jobs} passHref>
+    <NextLink href={Routes.institucion?.fundacion} passHref>
       <Card
         component={m.div}
         whileHover="hover"

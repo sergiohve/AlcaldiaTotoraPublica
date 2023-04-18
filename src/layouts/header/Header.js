@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import NextLink from 'next/link';
 // @mui
 import { useTheme } from '@mui/material/styles';
-import { Box, Stack, Button, AppBar, Divider, Container, Link } from '@mui/material';
+import { Box, Stack, Button, AppBar, Divider, Container, Link, Typography } from '@mui/material';
 // hooks
 import { useOffSetTop, useResponsive } from '../../hooks';
 // routes
@@ -12,7 +12,7 @@ import Routes from '../../routes';
 import { HEADER_DESKTOP_HEIGHT } from '../../config';
 // components
 import { Logo, Label } from '../../components';
-//
+import { SocialsButton } from '../../components';
 import Searchbar from '../Searchbar';
 import LanguagePopover from '../LanguagePopover';
 import { NavMobile, NavDesktop, navConfig } from '../nav';
@@ -43,76 +43,23 @@ export default function Header({ transparent }) {
             justifyContent: 'flex-start',
           }}
         >
-          <Box sx={{ lineHeight: 0, position: 'relative' }}>
-            <Logo onDark={transparent && !isScrolling} />
-
-            <Link href="https://zone-docs.vercel.app/changelog" target="_blank" rel="noopener">
-              <Label
-                color="info"
-                sx={{
-                  ml: 0.5,
-                  px: 0.5,
-                  top: -14,
-                  left: 64,
-                  height: 20,
-                  fontSize: 11,
-                  cursor: 'pointer',
-                  position: 'absolute',
-                }}
-              >
-                v1.4
-              </Label>
-            </Link>
+          <Box sx={{ lineHeight: 0, position: 'relative', fontFamily: "fantasy", color: "black"}}>
+          <Typography variant="h5" >
+          Alcaldía Totora
+        </Typography>
+          
           </Box>
-
           {isDesktop && (
             <NavDesktop
               isScrolling={isScrolling}
-              isTransparent={transparent}
+              
               navConfig={navConfig}
             />
           )}
 
           <Box sx={{ flexGrow: 1 }} />
 
-          <Stack spacing={2} direction="row" alignItems="center">
-            <Searchbar
-              sx={{
-                ...(isScrolling && { color: 'text.primary' }),
-              }}
-            />
-
-            <LanguagePopover
-              sx={{
-                ...(isScrolling && { color: 'text.primary' }),
-              }}
-            />
-
-            <Divider orientation="vertical" sx={{ height: 24 }} />
-
-            {isDesktop && (
-              <Stack direction="row" spacing={1}>
-                <NextLink href={Routes.registerIllustration} prefetch={false} passHref>
-                  <Button
-                    color="inherit"
-                    variant="outlined"
-                    sx={{
-                      ...(transparent && {
-                        color: 'common.white',
-                      }),
-                      ...(isScrolling && isLight && { color: 'text.primary' }),
-                    }}
-                  >
-                    Join Us
-                  </Button>
-                </NextLink>
-
-                <Button variant="contained" href={Routes.buyNow} target="_blank" rel="noopener">
-                  Buy Now
-                </Button>
-              </Stack>
-            )}
-          </Stack>
+        
 
           {!isDesktop && (
             <NavMobile

@@ -191,8 +191,7 @@ function PostItem({ post }) {
 
           <NextLink
             passHref
-            as={Routes.marketing.post(slug)}
-            href={Routes.marketing.post('[slug]')}
+           
           >
             <Link variant="h4" color="inherit">
               {title}

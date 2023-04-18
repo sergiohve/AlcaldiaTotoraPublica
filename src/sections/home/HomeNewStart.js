@@ -5,7 +5,7 @@ import { Box, Paper, Container, Typography } from '@mui/material';
 // components
 import { Image } from '../../components';
 import { MotionViewport, varFade } from '../../components/animate';
-
+import Alcalde from "../../assets/totora1.jpeg"
 // ----------------------------------------------------------------------
 
 const RootStyle = styled('div')(({ theme }) => ({
@@ -27,38 +27,44 @@ export default function HomeNewStart() {
             borderRadius: 3,
             textAlign: 'center',
             bgcolor: 'background.neutral',
+            display: "flex",
+            flexWrap: "wrap"
           }}
           component={MotionViewport}
         >
           <m.div variants={varFade().inUp}>
             <Image
-              alt="cover"
-              src="https://zone-assets-api.vercel.app/assets/images/home/new_start.png"
-              sx={{ maxWidth: 720, mx: 'auto' }}
+
+              src={`https://zone-assets-api.vercel.app/assets/illustrations/illustration_newsletter.svg`}
+              sx={{
+                borderRadius: 1.5,
+                transition: (theme) => theme.transitions.create('box-shadow'),
+                '&:hover': {
+                  boxShadow: (theme) => theme.customShadows.z24,
+                },
+                width: "50%",
+                marginLeft: "auto",
+                marginRight: "auto"
+              }}
             />
           </m.div>
 
-          <Box sx={{ mt: 3, mx: 'auto', px: 3, maxWidth: 560 }}>
-            <m.div variants={varFade().inDown}>
-              <Typography variant="overline" sx={{ color: 'text.disabled' }}>
-                new start
-              </Typography>
-            </m.div>
+          <Box sx={{ mt: 3, mx: 'auto', px: 3 }}>
+
 
             <m.div variants={varFade().inDown}>
               <Typography variant="h2" sx={{ mt: 2, mb: 3 }}>
-                The
                 <Box component="span" sx={{ color: 'primary.main' }}>
-                  {''} ZONE {''}
+                  {''} Nuestro Alcalde {''}
                 </Box>
-                UI Kit
               </Typography>
             </m.div>
 
             <m.div variants={varFade().inDown}>
-              <Typography sx={{ color: 'text.secondary' }}>
-                Modern ui kit to save your time, boost your creativity. Neat and super stylish
-                layout ready to help with your projects
+              <Typography sx={{ color: 'text.secondary', textAlign: "left" }}>
+                <Box>Alcalde del Gobierno Autónomo Municipal de Totora</Box>
+
+
               </Typography>
             </m.div>
           </Box>

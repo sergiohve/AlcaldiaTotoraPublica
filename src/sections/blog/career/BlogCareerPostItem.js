@@ -84,7 +84,7 @@ export default function BlogCareerPostItem({ post, index }) {
           {duration}
         </Stack>
 
-        <NextLink passHref as={Routes.career.post(slug)} href={Routes.career.post('[slug]')}>
+        <NextLink passHref as={Routes.services_juridicos.post(slug)} href={Routes.services_juridicos.post('[slug]')}>
           <Link
             color="inherit"
             variant="h5"

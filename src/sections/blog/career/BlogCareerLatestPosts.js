@@ -73,7 +73,7 @@ export default function BlogCareerLatestPosts({ posts }) {
             </Typography>
           </Stack>
 
-          <NextLink href={Routes.career.posts} passHref>
+          <NextLink href={Routes.institucion.posts} passHref>
             <Button
               endIcon={<Iconify icon={directionStraightRight} sx={{ width: 22, height: 22 }} />}
               sx={{ display: { xs: 'none', md: 'inline-flex' } }}
@@ -119,7 +119,7 @@ export default function BlogCareerLatestPosts({ posts }) {
             display: { xs: 'flex', md: 'none' },
           }}
         >
-          <NextLink href={Routes.career.posts} passHref>
+          <NextLink href={Routes.institucion.posts} passHref>
             <Button
               endIcon={<Iconify icon={directionStraightRight} sx={{ width: 22, height: 22 }} />}
             >
@@ -200,7 +200,7 @@ function PostItem({ post, order, largePost }) {
           {duration}
         </Stack>
 
-        <NextLink passHref as={Routes.career.post(slug)} href={Routes.career.post('[slug]')}>
+        <NextLink passHref as={Routes.institucion.post(slug)} href={Routes.institucion.post('[slug]')}>
           <TextMaxLine variant={largePost ? 'h3' : 'h6'} asLink>
             {title}
           </TextMaxLine>

@@ -30,8 +30,8 @@ export default function OurClientsCareer({ brands }) {
     slidesToScroll: 1,
     rtl: Boolean(theme.direction === 'rtl'),
     autoplay: true,
-    speed: 5000,
-    autoplaySpeed: 5000,
+    speed: 1000,
+   
     cssEase: 'linear',
     responsive: [
       {
@@ -65,7 +65,7 @@ export default function OurClientsCareer({ brands }) {
         </Stack>
 
         <Slider {...carouselSettings}>
-          {brands.map((brand) => (
+          {brands?.map((brand) => (
             <Box key={brand.id} sx={{ px: 1.5 }}>
               <Paper
                 variant="outlined"

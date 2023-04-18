@@ -24,7 +24,7 @@ function Circle({ children, hide = false, sx, ...other }) {
             strokeWidth="1"
             opacity="0.24"
           >
-            <g stroke="#919EAB" strokeWidth="2" transform="translate(-757 1.852)">
+            <g stroke="#000" strokeWidth="2" transform="translate(-757 1.852)">
               <path d="M1017 518c143.042 0 259-115.958 259-259S1160.042 0 1017 0 758 115.958 758 259s115.958 259 259 259z" />
             </g>
           </g>

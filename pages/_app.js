@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 // scroll bar
 import 'simplebar/src/simplebar.css';
 
@@ -12,7 +13,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import 'react-lazy-load-image-component/src/effects/opacity.css';
 import 'react-lazy-load-image-component/src/effects/black-and-white.css';
-
+import "./index.css"
 // ----------------------------------------------------------------------
 
 import PropTypes from 'prop-types';
@@ -22,17 +23,18 @@ import Head from 'next/head';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 // contexts
-import { SettingsProvider } from '../src/contexts/SettingsContext';
+import { SettingsContext, SettingsProvider } from '../src/contexts/SettingsContext';
 // theme
 import ThemeProvider from '../src/theme';
 // utils
 import axios from '../src/utils/axios';
 // components
-import Settings from '../src/components/settings';
+import BtnWp from '../src/components/BtnWp';
 import RtlLayout from '../src/components/RtlLayout';
 import ProgressBar from '../src/components/ProgressBar';
 import ThemeColorPresets from '../src/components/ThemeColorPresets';
 import MotionLazyContainer from '../src/components/animate/MotionLazyContainer';
+
 
 // ----------------------------------------------------------------------
 
@@ -43,13 +45,23 @@ MyApp.propTypes = {
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
+  const [showChild, setShowChild] = useState(false);
+  useEffect(() => {
+    setShowChild(true);
+  }, []);
+  if (!showChild) {
+    return null;
+  }
 
   const getLayout = Component.getLayout ?? ((page) => page);
 
   console.info('[INFO] baseAPI', axios.defaults.baseURL);
 
-  return (
-    <>
+  if (typeof window === 'undefined') {
+    return <></>;
+  } else {
+    return (
+      <>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
@@ -60,7 +72,6 @@ export default function MyApp(props) {
             <ThemeColorPresets>
               <MotionLazyContainer>
                 <RtlLayout>
-                  <Settings />
                   <ProgressBar />
                   {getLayout(<Component {...pageProps} />)}
                 </RtlLayout>
@@ -70,5 +81,8 @@ export default function MyApp(props) {
         </SettingsProvider>
       </LocalizationProvider>
     </>
-  );
+    );
+  }
+
+
 }

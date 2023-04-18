@@ -52,8 +52,8 @@ export default function TestimonialsCareer({ testimonials }) {
             </Typography>
 
             <Slider ref={carouselRef} {...carouselSettings}>
-              {testimonials.map((testimonial) => (
-                <TestimonialsItem key={testimonial.id} testimonial={testimonial} />
+              {testimonials?.map((testimonial) => (
+                <TestimonialsItem key={testimonial?.id} testimonial={testimonial} />
               ))}
             </Slider>
           </Grid>

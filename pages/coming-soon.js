@@ -105,9 +105,9 @@ ComingSoonPage.getLayout = function getLayout(page) {
 
 function TimeBox(type, label) {
   return (
-    <div>
+    <m.div>
       <Typography variant="h2">{type}</Typography>
       <Typography sx={{ color: 'text.secondary' }}>{label}</Typography>
-    </div>
+    </m.div>
   );
 }

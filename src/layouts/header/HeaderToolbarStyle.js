@@ -12,8 +12,7 @@ export const ToolbarStyle = styled(Toolbar, {
   shouldForwardProp: (prop) => prop !== 'transparent' && prop !== 'scrolling',
 })(({ transparent, scrolling, theme }) => ({
   height: HEADER_MOBILE_HEIGHT,
-  color: theme.palette.text.primary,
-  backgroundColor: theme.palette.background.default,
+
   transition: theme.transitions.create(['height', 'background-color'], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.short,
@@ -22,7 +21,7 @@ export const ToolbarStyle = styled(Toolbar, {
     height: HEADER_DESKTOP_HEIGHT,
   },
   ...(transparent && {
-    color: theme.palette.common.white,
+    color: "black",
     backgroundColor: 'transparent',
   }),
   ...(scrolling && {
@@ -39,6 +38,7 @@ export const ToolbarShadowStyle = styled('div')(({ theme }) => ({
   bottom: 0,
   height: 24,
   zIndex: -1,
+  fontSize: "10px",
   margin: 'auto',
   borderRadius: '50%',
   position: 'absolute',

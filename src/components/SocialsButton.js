@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 // icons
 import logoLinkedin from '@iconify/icons-carbon/logo-linkedin';
-import logoFacebook from '@iconify/icons-carbon/logo-facebook';
+import logoYoutube from '@iconify/icons-carbon/logo-youtube';
 import logoTwitter from '@iconify/icons-carbon/logo-twitter';
 import logoInstagram from '@iconify/icons-carbon/logo-instagram';
+
 // @mui
 import { alpha } from '@mui/material/styles';
 import { Stack, IconButton, Button, Link } from '@mui/material';
-//
+
 import Iconify from './Iconify';
 
 // ----------------------------------------------------------------------
@@ -22,16 +23,16 @@ SocialsButton.propTypes = {
 export default function SocialsButton({
   initialColor = false,
   simple = true,
-  links = {},
+  links = {youtube:"https://facebook.com/", instagram: "https://www.instagram.com/", linkedin: "https://www.linkedin.com/in/sehv/", twitter: "https://twitter.com/?lang=es",  tiktok: "https://www.tiktok.com/es/"  },
   sx,
   ...other
 }) {
   const SOCIALS = [
     {
-      name: 'FaceBook',
-      icon: logoFacebook,
+      name: 'Youtube',
+      icon: logoYoutube,
       socialColor: '#1877F2',
-      path: links.facebook || '#facebook-link',
+      path: links.youtube || '#youtube-link',
     },
     {
       name: 'Instagram',
@@ -50,7 +51,7 @@ export default function SocialsButton({
       icon: logoTwitter,
       socialColor: '#00AAEC',
       path: links.twitter || '#twitter-link',
-    },
+    }
   ];
 
   return (

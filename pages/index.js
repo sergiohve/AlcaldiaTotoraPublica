@@ -1,5 +1,5 @@
 // _data
-import { _pricingHome } from '../_data/mock';
+import { _jobsByCompanies, _pricingHome } from '../_data/mock';
 // layouts
 import Layout from '../src/layouts';
 // components
@@ -11,33 +11,39 @@ import {
   // HomeFAQs,
   HomeNewStart,
   // HomeDemoPages,
-  HomeForDesigner,
+  HomeMunicipio,
   HomeCombination,
   HomeAdvertisement,
   HomeFeatureHighlights,
   HomeFlexibleComponents,
+  HomeObras,
+  HomeAtractivosTuristicos,
+  HomeDemoPages,
+  HomeForDesigner,
 } from '../src/sections/home';
+import Wp from "../src/assets/wp.jpg"
+import { NewsletterCareer } from '../src/sections/newsletter';
+import { CareerLandingTopCompanies, CareerLangdingForRecruiters } from '../src/sections/@career';
+import { MarketingFreeSEO } from '../src/sections/@marketing';
 
 // ----------------------------------------------------------------------
 
 export default function HomePage() {
   return (
-    <Page title="The starting point for your next project">
-      <HomeHero />
-
+    <Page title="Inicio de Totora">
+       <HomeHero />
+     
       <HomeNewStart />
+     
+      <HomeMunicipio />
+      <HomeObras />
+      <HomeAtractivosTuristicos />
+      <CareerLangdingForRecruiters />
+      
+      <CareerLandingTopCompanies companies={_jobsByCompanies} />
+      <MarketingFreeSEO />
+   
 
-      <HomeFlexibleComponents />
-
-      <HomeFeatureHighlights />
-
-      <HomeForDesigner />
-
-      <PricingHome plans={_pricingHome} />
-
-      <HomeCombination />
-
-      <HomeAdvertisement />
     </Page>
   );
 }
@@ -45,5 +51,5 @@ export default function HomePage() {
 // ----------------------------------------------------------------------
 
 HomePage.getLayout = function getLayout(page) {
-  return <Layout simpleFooter>{page}</Layout>;
+  return <Layout>{page}</Layout>;
 };

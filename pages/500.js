@@ -33,11 +33,11 @@ export default function Page500() {
           <Stack alignItems="center" sx={{ maxWidth: 480 }}>
             <m.div variants={varBounce().in}>
               <Typography variant="h3" paragraph>
-                500 Internal Server Error
+              Error interno de servidor 500
               </Typography>
             </m.div>
             <Typography sx={{ color: 'text.secondary' }}>
-              There was an error, please try again later.
+            Hubo un error, inténtalo de nuevo más tarde.
             </Typography>
 
             <m.div variants={varBounce().in}>
@@ -53,7 +53,7 @@ export default function Page500() {
 
             <NextLink href="/" passHref>
               <Button size="large" variant="contained">
-                Go to Home
+                Ir al inicio
               </Button>
             </NextLink>
           </Stack>

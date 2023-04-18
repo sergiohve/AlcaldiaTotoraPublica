@@ -87,11 +87,12 @@ export default function NavDesktopMenu({ lists, isOpen, onClose, isScrolling }) 
 
   const carouselRef = useRef(null);
 
-  const carouselList = lists.filter((list) => list.subheader !== 'Common');
+  const carouselList = lists.filter((list) => list );
+  console.log(carouselList)
 
-  const commonList = lists.filter((list) => list.subheader === 'Common')[0];
+  
 
-  const minList = lists.length > 5;
+  const minList = lists.length > 4;
 
   const carouselSettings = {
     arrows: false,
@@ -119,7 +120,7 @@ export default function NavDesktopMenu({ lists, isOpen, onClose, isScrolling }) 
       onClose={onClose}
       variants={
         varFade({
-          distance: 80,
+          distance: 0,
           durationIn: 0.16,
           durationOut: 0.24,
           easeIn: 'easeIn',
@@ -154,47 +155,7 @@ export default function NavDesktopMenu({ lists, isOpen, onClose, isScrolling }) 
                     <m.div variants={varFade({ distance: 80 }).inLeft}>
                       <ListSubheaderStyled>{subheader}</ListSubheaderStyled>
                     </m.div>
-
-                    {cover ? (
-                      <NextLink href={path} passHref>
-                        <Box
-                          component={m.a}
-                          variants={varFade({ distance: 80 }).inLeft}
-                          sx={{ display: 'block' }}
-                        >
-                          <Image
-                            alt={cover}
-                            src={cover}
-                            sx={{
-                              mb: 2.5,
-                              minHeight: 80,
-                              borderRadius: 1.5,
-                              cursor: 'pointer',
-                              transition: theme.transitions.create('opacity'),
-                              border: (theme) => `solid 1px ${theme.palette.divider}`,
-                              '&:hover': { opacity: 0.8 },
-                            }}
-                          />
-                        </Box>
-                      </NextLink>
-                    ) : (
-                      <Box
-                        sx={{
-                          mb: 2.5,
-                          height: 132,
-                          borderRadius: 1.5,
-                          display: 'flex',
-                          typography: 'h5',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          color: 'text.disabled',
-                          bgcolor: 'background.neutral',
-                        }}
-                      >
-                        Coming Soon!
-                      </Box>
-                    )}
-
+                   
                     <Stack spacing={1.5} alignItems="flex-start">
                       {items?.map((item) => {
                         const { title, path } = item;
@@ -223,26 +184,7 @@ export default function NavDesktopMenu({ lists, isOpen, onClose, isScrolling }) 
           </Box>
         </Grid>
 
-        {/* Common List */}
-        <Grid
-          item
-          xs={3}
-          sx={{
-            borderLeft: (theme) => `dashed 1px ${theme.palette.divider}`,
-          }}
-        >
-          <List disablePadding sx={{ py: 6 }} component={MotionContainer}>
-            <ListSubheaderStyled>{commonList.subheader}</ListSubheaderStyled>
-            <Stack spacing={1.5} alignItems="flex-start">
-              {commonList.items.map((item) => {
-                const { title, path } = item;
-                const active = router.pathname === path;
-
-                return <LinkItem key={title} title={title} href={path} active={active} />;
-              })}
-            </Stack>
-          </List>
-        </Grid>
+       
       </Grid>
     </DialogAnimate>
   );
@@ -265,7 +207,7 @@ function LinkItem({ title, href, active }) {
         component={m.a}
         variants={
           varFade({
-            distance: 12,
+            distance: 0,
             durationIn: 0.16,
             durationOut: 0.12,
             easeIn: 'easeIn',

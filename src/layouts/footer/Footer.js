@@ -24,7 +24,7 @@ import { useResponsive } from '../../hooks';
 // components
 import { Logo, Iconify, SocialsButton, AppStoreButton } from '../../components';
 //
-import { PageLinks } from '../nav/NavConfig';
+import { PageLinks, PageServiciosTramites, Pageblogs, PageInstitucion } from '../nav/NavConfig';
 
 // ----------------------------------------------------------------------
 
@@ -44,24 +44,38 @@ const LinkStyle = styled((props) => <Link target="_blank" rel="noopener" {...pro
 export default function Footer() {
   const isDesktop = useResponsive('up', 'md');
 
-  const lists = PageLinks.filter((list) => list.subheader !== 'Coming Soon');
+  const lists = PageLinks.filter((list) => list.subheader);
+  const listsCoaching = PageServiciosTramites.filter((list) => list.subheader);
+  const listsBlogs = Pageblogs.filter((list) => list.subheader);
+  const listsServices = PageInstitucion.filter((list) => list.subheader);
 
   const renderLists = isDesktop
     ? lists
     : lists.sort((listA, listB) => Number(listA.order) - Number(listB.order));
 
+  const renderListsCoaching = isDesktop
+    ? listsCoaching
+    : listsCoaching.sort((listA, listB) => Number(listA.order) - Number(listB.order));
+
+  const renderListsBlogs = isDesktop
+    ? listsBlogs
+    : listsBlogs.sort((listA, listB) => Number(listA.order) - Number(listB.order));
+
+  const renderListsServices = isDesktop
+    ? listsServices
+    : listsServices.sort((listA, listB) => Number(listA.order) - Number(listB.order));
+
   return (
     <>
       <Divider />
-      <Container sx={{ py: { xs: 8, md: 10 } }}>
+      <Container sx={{ py: { xs: 12, md: 12 } }}>
         <Grid container spacing={3} justifyContent={{ md: 'space-between' }}>
-          <Grid item xs={12} md={4}>
-            <Stack spacing={{ xs: 3, md: 5 }}>
-              <Stack alignItems="flex-start" spacing={3}>
-                <Logo />
-                <Typography variant="body3" sx={{ color: 'text.secondary' }}>
-                  The starting point for your next project based on easy-to-customize Material-UI ©
-                  helps you build apps faster and better.
+          <Grid item xs={12} md={3}>
+            <Stack spacing={{ xs: 3, md: 5 }} >
+              <Stack alignItems="flex-start" spacing={3} sx={{ fontWeight: 900}}>
+                ALCALDÍA DE TOTORA
+                <Typography variant="body3" sx={{ color: 'text.secondary', fontFamily: "inherit" }}>
+                  Sitio web de Alcaldía de Totora.
                 </Typography>
               </Stack>
 
@@ -70,56 +84,64 @@ export default function Footer() {
                 <SocialsButton />
               </Stack>
 
-              <Stack alignItems="flex-start">
+              {/* <Stack alignItems="flex-start">
                 <Typography variant="h6">Documentation</Typography>
                 <LinkStyle href="#">Documentation</LinkStyle>
                 <LinkStyle href="#">Changelog</LinkStyle>
                 <LinkStyle href="#">Contributing</LinkStyle>
-              </Stack>
+                </Stack>*/}
 
-              <Stack spacing={2}>
-                <Stack spacing={1}>
-                  <Typography variant="h6">Let’s stay in touch</Typography>
-                  <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-                    Ubscribe to our newsletter to receive latest articles to your inbox weekly.
-                  </Typography>
-                </Stack>
-                <FilledInput
-                  placeholder="Email address"
-                  endAdornment={
-                    <InputAdornment position="end">
-                      <Button variant="contained" size="small" sx={{ py: '9px' }}>
-                        Subscribe
-                      </Button>
-                    </InputAdornment>
-                  }
-                  sx={{
-                    pr: 0.5,
-                    '& .MuiFilledInput-input': { py: '14px' },
-                  }}
-                />
-              </Stack>
+              
 
-              <Stack spacing={2}>
-                <Typography variant="h6">Apps</Typography>
-                <AppStoreButton />
-              </Stack>
+
             </Stack>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={9}>
             {isDesktop ? (
-              <Masonry columns={3} spacing={3}>
-                {renderLists.map((list) => (
-                  <ListDesktop key={list.subheader} list={list} />
-                ))}
-              </Masonry>
+              <Grid style={{ display: "flex" }}>
+                <Grid xs={12} md={3}>
+                  {renderListsServices.map((list) => (
+                    <ListDesktop key={list.subheader} list={list} />
+                  ))}</Grid>
+                <Grid xs={12} md={3}>
+                  {renderListsCoaching.map((list) => (
+                    <ListDesktop key={list.subheader} list={list} />
+                  ))}</Grid>
+                <Grid xs={12} md={3}>
+                  {renderLists.map((list) => (
+                    <ListDesktop key={list.subheader} list={list} />
+                  ))}
+                </Grid>
+                <Grid xs={12} md={3}>
+                  {renderListsBlogs.map((list) => (
+                    <ListDesktop key={list.subheader} list={list} />
+                  ))}</Grid>
+
+              </Grid>
             ) : (
-              <Stack spacing={1.5}>
-                {renderLists.map((list) => (
-                  <ListMobile key={list.subheader} list={list} />
-                ))}
-              </Stack>
+              <Grid style={{ display: "flex", flexWrap: "wrap" }}>
+                <Grid xs={4} md={3}>
+                  {renderListsServices.map((list) => (
+                    <ListMobile key={list.subheader} list={list} />
+                  ))}</Grid>
+                <Grid xs={4} md={3}>
+                  {renderListsCoaching.map((list) => (
+                    <ListMobile key={list.subheader} list={list} />
+                  ))}</Grid>
+                <Grid xs={4} md={3}>
+                  {renderLists.map((list) => (
+                    <ListMobile key={list.subheader} list={list} />
+                  ))}
+
+                </Grid>
+                <Grid xs={4} md={3}>
+                  {renderListsBlogs.map((list) => (
+                    <ListMobile key={list.subheader} list={list} />
+                  ))}</Grid>
+
+              </Grid>
+
             )}
           </Grid>
         </Grid>
@@ -135,16 +157,9 @@ export default function Footer() {
           sx={{ py: 3, textAlign: 'center' }}
         >
           <Typography variant="body3" sx={{ color: 'text.secondary' }}>
-            © 2021. All rights reserved
+            Desarrollado por Sergio Herrera, correo: sergioherrerav20@gmail.com
           </Typography>
-          <Stack direction="row" spacing={3} justifyContent="center">
-            <Link variant="body3" sx={{ color: 'text.secondary' }}>
-              Help Center
-            </Link>
-            <Link variant="body3" sx={{ color: 'text.secondary' }}>
-              Terms of Service
-            </Link>
-          </Stack>
+
         </Stack>
       </Container>
     </>

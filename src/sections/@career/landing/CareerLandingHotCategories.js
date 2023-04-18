@@ -49,9 +49,7 @@ export default function CareerLandingHotCategories({ categories }) {
             },
           }}
         >
-          {categories.map((category) => (
-            <CategoryItem key={category.id} category={category} />
-          ))}
+         kjdkskds
         </Box>
 
         <Stack alignItems="center">
@@ -127,15 +125,15 @@ function CategoryItem({ category }) {
             justifyContent: 'center',
           }}
         >
-          <SvgIconStyle src={category.icon} sx={{ width: 48, height: 48 }} />
+          <SvgIconStyle src={category?.icon} sx={{ width: 48, height: 48 }} />
         </Box>
 
         <TextMaxLine variant="h6" line={1}>
-          {category.name}
+          {category?.name}
         </TextMaxLine>
 
         <Typography variant="body2" sx={{ color: 'text.disabled', mt: 0.5 }}>
-          {category.totalJobs} jobs
+          {category?.totalJobs} jobs
         </Typography>
       </Stack>
     </Paper>

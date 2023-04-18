@@ -71,13 +71,11 @@ export default function CareerLandingFeaturedJobs({ jobs }) {
             },
           }}
         >
-          {jobs.map((job) => (
-            <CareerJobItem key={job.id} job={job} />
-          ))}
+          hola
         </Box>
 
         <Stack alignItems="center">
-          <NextLink href={Routes.career.jobs} passHref>
+          <NextLink href={Routes.institucion.fundacion} passHref>
             <Button
               color="inherit"
               size="large"

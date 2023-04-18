@@ -41,7 +41,7 @@ export default function CareerJobSimilar({ jobs }) {
         >
           <Typography variant="h3">Similar Jobs</Typography>
 
-          <NextLink href={Routes.career.jobs} passHref>
+          <NextLink href={Routes.institucion.jobs} passHref>
             <Button
               endIcon={<Iconify icon={directionStraightRight} sx={{ width: 22, height: 22 }} />}
               sx={{
@@ -76,7 +76,7 @@ export default function CareerJobSimilar({ jobs }) {
             display: { xs: 'flex', md: 'none' },
           }}
         >
-          <NextLink href={Routes.career.jobs} passHref>
+          <NextLink href={Routes.services_juridicos.jobs} passHref>
             <Button
               endIcon={<Iconify icon={directionStraightRight} sx={{ width: 22, height: 22 }} />}
             >

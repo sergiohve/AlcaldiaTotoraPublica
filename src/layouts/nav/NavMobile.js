@@ -38,7 +38,7 @@ const RootLinkStyle = styled(ListItemButton, {
   textTransform: 'capitalize',
   paddingLeft: theme.spacing(2.5),
   paddingRight: theme.spacing(2.5),
-  color: theme.palette.text.secondary,
+  color: "black",
   ...(active && {
     color: theme.palette.primary.main,
     fontWeight: theme.typography.fontWeightMedium,
@@ -97,19 +97,7 @@ export default function NavMobile({ navConfig, sx }) {
             ))}
           </List>
 
-          <Stack spacing={2} sx={{ p: 2.5, pb: 5 }}>
-            <NextLink href={Routes.loginIllustration} passHref>
-              <Button fullWidth variant="outlined" color="inherit">
-                Login
-              </Button>
-            </NextLink>
-
-            <NextLink href={Routes.registerIllustration} passHref>
-              <Button fullWidth variant="contained" color="inherit">
-                Join Us
-              </Button>
-            </NextLink>
-          </Stack>
+         
         </Scrollbar>
       </Drawer>
     </>

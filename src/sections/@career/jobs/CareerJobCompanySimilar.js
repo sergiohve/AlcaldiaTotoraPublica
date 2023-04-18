@@ -33,7 +33,7 @@ export default function CareerJobCompanySimilar({ jobs }) {
             },
           }}
         >
-          <NextLink as={Routes.career.job(job.id)} href={Routes.career.job('[id]')} passHref>
+          <NextLink as={Routes.institucion.job(job.id)} href={Routes.institucion.job('[id]')} passHref>
             <Link variant="subtitle1" color="inherit">
               {job.slug}
             </Link>

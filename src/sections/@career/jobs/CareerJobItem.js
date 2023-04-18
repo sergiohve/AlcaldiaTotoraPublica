@@ -92,12 +92,8 @@ export default function CareerJobItem({ job }) {
         </Stack>
 
         <Stack spacing={0.5} sx={{ mt: 3, mb: 2 }}>
-          <NextLink as={Routes.career.job(id)} href={Routes.career.job('[id]')} passHref>
-            <TextMaxLine variant="h6" asLink line={1}>
-              {slug}
-            </TextMaxLine>
-          </NextLink>
-
+         
+            
           <Typography variant="body3" sx={{ color: 'secondary.main' }}>
             {companyName}
           </Typography>

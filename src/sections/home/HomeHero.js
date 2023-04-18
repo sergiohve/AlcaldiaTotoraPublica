@@ -1,106 +1,97 @@
 import { useRef } from 'react';
 // icons
 import launchIcon from '@iconify/icons-carbon/launch';
-// @mui
-import { styled } from '@mui/material/styles';
+
 import { Box, Stack, Button, Container, Typography, Grid } from '@mui/material';
 // hooks
 import { useBoundingClientRect } from '../../hooks';
+import Slider from 'react-slick';
+
+import { CarouselDots, CarouselArrows } from '../../components';
+import cssStyles from '../../utils/cssStyles';
+import { styled, alpha } from '@mui/material/styles';
 // routes
 import Routes from '../../routes';
 // components
 import { Image, Iconify } from '../../components';
+import { useEffect } from 'react';
 
 // ----------------------------------------------------------------------
 
-const RootStyle = styled('div')(({ theme }) => ({
-  overflow: 'hidden',
-  position: 'relative',
-  [theme.breakpoints.up('md')]: {
-    height: '100vh',
+
+
+// ----------------------------------------------------------------------
+const IMAGENES = [
+  {
+    img: "https://zone-assets-api.vercel.app/assets/images/menu/menu_travel.jpg",
+    title: "Visita nuestro municipio",
+    response: "Recibe un poco de ayuda de nuestro gobierno"
   },
-}));
-
-// ----------------------------------------------------------------------
+  {
+    img: "https://zone-assets-api.vercel.app/assets/images/menu/menu_course.jpg",
+    title: "Conoce Totora",
+    response: "Totora es un municipio muy turistico"
+  }
+];
 
 export default function HomeHero() {
   const containerRef = useRef(null);
   const container = useBoundingClientRect(containerRef);
 
   const offsetLeft = container?.left;
+  const carouselRef = useRef(null);
+
+  const handlePrevious = () => {
+    carouselRef.current?.slickPrev();
+  };
+
+  const handleNext = () => {
+    carouselRef.current?.slickNext();
+  };
+  const RootStyle = styled('div')(({ theme }) => ({
+    padding: theme.spacing(1, 0),
+    ...cssStyles(theme).bgImage({
+      url: 'https://zone-assets-api.vercel.app/assets/images/career/career_newsletter.jpg',
+      startColor: `${alpha(theme.palette.grey[700], 0.2)}`,
+      endColor: `${alpha(theme.palette.grey[600], 0.2)}`,
+    }),
+  }));
+
+  const carouselSettings = {
+    dots: true,
+    arrows: false,
+    infinite: true,
+    autoplay: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    ...CarouselDots({ sx: { my: 14 } }),
+  };
 
   return (
     <RootStyle>
-      <Container sx={{ height: 1 }}>
-        <Grid container columnSpacing={3} alignItems="center" sx={{ height: 1 }}>
-          <Grid item xs={12} md={5}>
-            <Stack
-              spacing={5}
-              alignItems={{ xs: 'center', md: 'flex-start' }}
-              justifyContent="center"
-              sx={{
-                py: 15,
-                textAlign: { xs: 'center', md: 'left' },
-              }}
-            >
-              <Typography variant="h1">
-                Create Your <br /> Website Today with
-                <Box component="span" sx={{ color: 'primary.main' }}>
-                  {''} ZONE
-                </Box>
-              </Typography>
-
-              <Typography sx={{ color: 'text.secondary' }}>
-                The ZONE is built on top of MUI, a powerful library that provides flexible,
-                customizable, and easy-to-use components.
-              </Typography>
-
-              <Button
-                color="inherit"
-                size="large"
-                variant="contained"
-                endIcon={<Iconify icon={launchIcon} />}
-                target="_blank"
-                rel="noopener"
-                href={Routes.figmaPreview}
-              >
-                figma workspace
-              </Button>
-
-              <Stack direction="row" spacing={2.5}>
-                {['figma', 'javascript', 'typescript', 'material', 'react'].map((icon) => (
-                  <Image
-                    key={icon}
-                    alt={icon}
-                    src={`https://zone-assets-api.vercel.app/assets/icons/platform/ic_platform_${icon}.svg`}
-                    sx={{ width: 32, height: 32 }}
-                  />
-                ))}
-              </Stack>
-            </Stack>
-          </Grid>
-
-          <Grid item xs={12} md={7}>
-            <Box ref={containerRef} />
-          </Grid>
-        </Grid>
-      </Container>
-
-      <Box
+  
+    <Container >
+      <CarouselArrows
+        onNext={handleNext}
+        onPrevious={handlePrevious}
         sx={{
-          maxWidth: 1280,
-          position: 'absolute',
-          bottom: { md: '20%', lg: 40 },
-          right: { md: -110, xl: 0 },
-          display: { xs: 'none', md: 'block' },
-          width: { md: `calc(100% - ${offsetLeft}px)` },
+          
+          marginTop: "100px"
         }}
       >
-        <Image
-          alt="home-hero"
-          src="https://zone-assets-api.vercel.app/assets/images/home/home_hero.png"
-        />
-      </Box>
+        <Slider ref={carouselRef} {...carouselSettings} >
+          {IMAGENES.map((img, index) => (
+            <Box key={index} sx={{ px: 1,color: "white",  marginTop: "150px", marginLeft: "auto", marginRight: "auto" }} >
+              <Typography variant="h1" sx={{ mt: 2, mb: 3 }}>{img.title}</Typography>
+              <Typography variant="h2" sx={{ mt: 2, mb: 3 }}>{img.response}</Typography>
+
+            </Box>
+          ))}
+        </Slider>
+      </CarouselArrows>
+    </Container>
+    
     </RootStyle>
   );
 }

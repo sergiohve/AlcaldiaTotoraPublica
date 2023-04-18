@@ -8,10 +8,9 @@ import cssStyles from '../../utils/cssStyles';
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(10, 0),
+  background: "black",
   ...cssStyles(theme).bgImage({
-    url: 'https://zone-assets-api.vercel.app/assets/images/career/career_newsletter.jpg',
-    startColor: `${alpha(theme.palette.grey[900], 0.88)}`,
-    endColor: `${alpha(theme.palette.grey[900], 0.88)}`,
+    objectFit: "cover"
   }),
 }));
 
@@ -22,13 +21,11 @@ export default function NewsletterCareer() {
     <RootStyle>
       <Container>
         <Stack spacing={3} alignItems="center" sx={{ color: 'common.white', textAlign: 'center' }}>
-          <Typography variant="h2">Get The Right Job For You</Typography>
-          <Typography>
-            Subscribe to get updated on latest and relevant career opportunities
-          </Typography>
+          <Typography variant="h2">Contáctanos</Typography>
+
 
           <FilledInput
-            placeholder="Enter your email"
+            placeholder="Ingrese su correo electrónico"
             endAdornment={
               <InputAdornment position="end">
                 <Button
@@ -40,7 +37,7 @@ export default function NewsletterCareer() {
                     borderBottomLeftRadius: 0,
                   }}
                 >
-                  Subscribe
+                  Enviar 
                 </Button>
               </InputAdornment>
             }

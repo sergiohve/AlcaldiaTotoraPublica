@@ -21,25 +21,25 @@ const SERVICES = [
     name: 'SEO',
     icon: 'https://zone-assets-api.vercel.app/assets/icons/service/ic_service_seo.svg',
     text: 'Nunc nonummy metus. Donec elit libero',
-    path: Routes.marketing.services,
+  
   },
   {
     name: 'Email Marketing',
     icon: 'https://zone-assets-api.vercel.app/assets/icons/service/ic_service_mail.svg',
     text: 'Nunc nonummy metus. Donec elit libero',
-    path: Routes.marketing.services,
+  
   },
   {
     name: 'Search Engine Oprimization',
     icon: 'https://zone-assets-api.vercel.app/assets/icons/service/ic_service_analysis.svg',
     text: 'Nunc nonummy metus. Donec elit libero',
-    path: Routes.marketing.services,
+    
   },
   {
     name: 'Social Marketing',
     icon: 'https://zone-assets-api.vercel.app/assets/icons/service/ic_service_bullhorn.svg',
     text: 'Nunc nonummy metus. Donec elit libero',
-    path: Routes.marketing.services,
+   
   },
 ];
 

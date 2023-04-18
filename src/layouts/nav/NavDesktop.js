@@ -39,15 +39,16 @@ const RootLinkStyle = styled(Link, {
     ...theme.typography.subtitle2,
     fontWeight: theme.typography.fontWeightMedium,
     display: 'flex',
-    color: 'inherit',
+    color: 'black',
     position: 'relative',
     alignItems: 'center',
     transition: theme.transitions.create('opacity', {
       duration: theme.transitions.duration.shortest,
     }),
     '&:hover': {
-      opacity: 0.72,
+      opacity: 0.6,
       textDecoration: 'none',
+      color: "red"
     },
     ...(active && {
       ...dotActiveStyle,
@@ -73,9 +74,9 @@ export default function NavDesktop({ isScrolling, isTransparent, navConfig }) {
   return (
     <Stack
       direction="row"
-      spacing={6}
+      spacing={2}
       sx={{
-        ml: 6,
+        ml: 3,
         color: 'text.secondary',
         ...(isTransparent && {
           color: 'inherit',
@@ -141,14 +142,18 @@ function NavItemDesktop({ item, isScrolling, isTransparent }) {
           open={open}
           scrolling={isScrolling}
           transparent={isTransparent}
+          sx={{
+           fontSize: "12px"
+           
+          }}
         >
           {title}
           <Iconify
             icon={open ? chevronUp : chevronDown}
             sx={{
-              ml: 0.5,
+              ml: 0.0,
               width: 16,
-              height: 16,
+              height: 16
             }}
           />
         </RootLinkStyle>

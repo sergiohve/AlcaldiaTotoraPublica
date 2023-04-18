@@ -72,12 +72,7 @@ export default function TravelTourItem({ tour }) {
             color: (theme) => (theme.palette.mode === 'light' ? 'common.white' : 'grey.800'),
           }}
         >
-          {priceSale > 0 && (
-            <Box sx={{ color: 'grey.500', textDecoration: 'line-through', mr: 0.5 }}>
-              {fCurrency(priceSale)}
-            </Box>
-          )}
-          {fCurrency(price)}
+         
         </Stack>
 
         <FavoriteButton
@@ -113,7 +108,7 @@ export default function TravelTourItem({ tour }) {
           }}
         />
 
-        <RatingLabel ratings={ratings} />
+       
       </Stack>
     </Card>
   );

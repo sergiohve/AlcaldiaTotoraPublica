@@ -52,7 +52,7 @@ export default function CareerJobHero({ job }) {
           onDark
           links={[
             { name: 'Home', href: '/' },
-            { name: 'Jobs', href: Routes.career.jobs },
+            { name: 'Jobs', href: Routes.institucion.jobs },
             { name: job.slug },
           ]}
           sx={{

@@ -73,7 +73,7 @@ const ListItemIconStyle = styled(ListItemIcon)({
   justifyContent: 'center',
   '& svg': {
     width: 22,
-    height: 22,
+    height: 22
   },
 });
 
@@ -104,9 +104,9 @@ export default function NavSection({ navConfig, ...other }) {
   return (
     <Box {...other}>
       {navConfig.map((list) => (
-        <List key={list.subheader} disablePadding sx={{ px: 0 }}>
-          <ListSubheaderStyle>{list.subheader}</ListSubheaderStyle>
-          {list.items.map((item) => (
+        <List key={list?.subheader} disablePadding sx={{ px: 0 }}>
+         
+          {list?.items?.map((item) => (
             <NavSectionItem key={item.title} item={item} />
           ))}
         </List>
@@ -146,7 +146,7 @@ function NavSectionItem({ item }) {
           {icon && <ListItemIconStyle>{icon}</ListItemIconStyle>}
           <ListItemText disableTypography primary={title} />
           {info && info}
-          <Iconify icon={open ? chevronDown : chevronRight} sx={{ width: 16, height: 16, ml: 1 }} />
+          <Iconify icon={open ? chevronDown : chevronRight} sx={{ width: 16, height: 16, ml: 1, color: "black" }} />
         </ListItemStyle>
 
         <Collapse in={open} timeout="auto" unmountOnExit>

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 // @mui
-import { Pagination, Box } from '@mui/material';
+import { m } from 'framer-motion';
+import { Pagination, Box, Typography } from '@mui/material';
 // components
 import { TourItemSkeleton } from '../../../components/skeleton';
 //
@@ -16,6 +17,11 @@ TravelTourList.propTypes = {
 export default function TravelTourList({ tours, loading }) {
   return (
     <>
+      <m.div>
+        <Typography variant="h2" sx={{ mt: 5, mb: 5, textAlign: { xs: 'center', md: 'center' } }} >
+          La Importancia de tus Finanzas
+        </Typography>
+      </m.div>
       <Box
         sx={{
           display: 'grid',

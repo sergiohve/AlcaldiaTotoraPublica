@@ -13,6 +13,7 @@ import { Iconify, Image } from '../../../components';
 const RootStyle = styled('div')(({ theme }) => ({
   ...cssStyles(theme).bgImage(),
   padding: theme.spacing(10, 0),
+  marginBottom: "40px"
 }));
 
 // ----------------------------------------------------------------------
@@ -32,17 +33,14 @@ export default function CareerLangdingForRecruiters() {
               textAlign: { xs: 'center', md: 'left' },
             }}
           >
-            <Typography variant="overline" sx={{ color: 'primary.main', mb: 2, display: 'block' }}>
-              FOR RECRUITERS
-            </Typography>
-            <Typography variant="h2">Do You Have A Position To Post Job? </Typography>
+           
+            <Typography variant="h2">Convocatorias Recientes </Typography>
             <Typography sx={{ mt: 3, mb: 5, opacity: 0.72 }}>
-              Donec mi odio, faucibus at, scelerisque quis, convallis in, nisi. Morbi mattis
-              ullamcorper velit.
+            BIOQUIMICO (A) - FARMACIA - LABORATORIO, RADIOLOGO (A) Y TECNICO CHAGAS PARA EL HOSPITAL MUNICIPAL DE VINTO Y CENTROS DE SALUD
             </Typography>
 
             <Button variant="contained" size="large" startIcon={<Iconify icon={documentIcon} />}>
-              Post a Job
+              Ver documentos
             </Button>
           </Grid>
 
